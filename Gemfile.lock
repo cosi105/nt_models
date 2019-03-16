@@ -4,6 +4,7 @@ PATH
     nt_models (0.1.0)
       activerecord (= 5.2.2)
       activerecord-import
+      pg
       rake
       sinatra
       sinatra-activerecord
@@ -30,6 +31,7 @@ GEM
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
     mustermann (1.0.3)
+    pg (1.1.4)
     rack (2.0.6)
     rack-protection (2.0.5)
       rack
