@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: nt_models_dev
+  pool: 2
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: nt_models_test
+  pool: 2
