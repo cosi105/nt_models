@@ -6,14 +6,12 @@ ENV['APP_ENV'] = 'test'
 require 'simplecov'
 SimpleCov.start
 require 'minitest/autorun'
-require 'rack/test'
 require 'nt_models'
 
 # Define file path pattern for identifying test files:
 test_pattern = '*_test.rb'
 
 describe 'NanoTwitter' do
-  include Rack::Test::Methods
   before do
     ActiveRecord::Base.subclasses.each(&:delete_all)
     names = %w[ari brad yang pito]
