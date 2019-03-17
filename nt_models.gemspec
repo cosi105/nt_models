@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'nt_models'
-  s.version     = '0.1.1'
+  s.version     = '0.1.2'
   s.date        = '2019-03-15'
   s.summary     = 'Models for COSI 105B project'
   s.authors     = ['Ari Carr']
@@ -9,4 +9,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'activerecord', '5.2.2'
   deps = %w[sinatra sinatra-activerecord rake pg bcrypt simplecov]
   deps.each { |d| s.add_runtime_dependency d }
+
+  s.add_development_dependency 'pry-byebug'
 end
