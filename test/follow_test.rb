@@ -1,6 +1,10 @@
+def follow(follower, followee)
+  Follow.create(follower: follower, followee: followee)
+end
+
 describe 'follows' do
   before do
-    @brad.follow(@ari)
+    follow(@brad, @ari)
   end
 
   it 'can tell how many people are following Ari' do
@@ -12,13 +16,13 @@ describe 'follows' do
   end
 
   it 'can handle multiple followers' do
-    [@yang, @pito].each { |u| u.follow @ari }
+    [@yang, @pito].each { |u| follow(u, @ari) }
     @ari.followers.count.must_equal 3
     [@brad, @yang, @pito].each { |u| u.followees.count.must_equal 1 }
   end
 
   it 'can handle multiple followees' do
-    [@yang, @pito].each { |u| @brad.follow u }
+    [@yang, @pito].each { |u| follow(@brad, u) }
     @brad.followees.count.must_equal 3
     [@ari, @yang, @pito].each { |u| u.followers.count.must_equal 1 }
   end

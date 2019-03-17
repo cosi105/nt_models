@@ -13,21 +13,4 @@ describe 'tweets' do
     @tweet.author.must_equal @ari
   end
 
-  it 'can fanout tweets' do
-    [@brad, @yang, @pito].each { |u| u.followees << @ari }
-    @tweet.fanout
-    [@brad, @yang, @pito].each do |u|
-      u.timeline_tweets.count.must_equal 1
-      u.timeline_tweets.first.must_equal @tweet
-    end
-  end
-
-  it 'can distribute tweets to new followers' do
-    [@brad, @yang, @pito].each { |u| u.follow(@ari) }
-    [@brad, @yang, @pito].each do |u|
-      u.timeline_tweets.count.must_equal 1
-      u.timeline_tweets.first.must_equal @tweet
-    end
-  end
-
 end

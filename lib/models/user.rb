@@ -17,12 +17,4 @@ class User < ActiveRecord::Base
   has_many :mentions, foreign_key: :mentioned_user_id
   has_many :mentioned_tweets, through: :mentions, source: :tweet
 
-  # A convenient method for following a user
-  def follow(followee)
-    Follow.create(follower_id: id, followee_id: followee.id)
-    columns = %i[timeline_owner_id tweet_id]
-    pieces = []
-    followee.tweets.each { |t| pieces << [id, t.id] }
-    TimelinePiece.import columns, pieces
-  end
 end
