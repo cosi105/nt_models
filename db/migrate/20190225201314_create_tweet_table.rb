@@ -5,6 +5,7 @@ class CreateTweetTable < ActiveRecord::Migration[5.2]
       t.string :body
       t.datetime :created_on
       t.integer :author_id
+      t.string :author_handle
     end
   end
 end
