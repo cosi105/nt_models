@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'nt_models'
-  s.version     = '0.1.2'
-  s.date        = '2019-03-15'
+  s.version     = '0.1.3'
+  s.date        = '2019-03-20'
   s.summary     = 'Models for COSI 105B project'
   s.authors     = ['Ari Carr']
   s.email       = 'acarr@brandeis.edu'
